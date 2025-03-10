@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONNX Model Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        img {
+            max-width: 300px;
+            margin-top: 10px;
+        }
+        .label {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .original {
+            color: blue;
+        }
+        .predicted {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload an Image for Prediction</h1>
+    
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required>
+        <br><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if image_url %}
+        <h2>Uploaded Image:</h2>
+        <p><strong>Filename:</strong> {{ image_name }}</p>
+        <img src="{{ image_url }}" alt="Uploaded Image">
+    {% endif %}
+
+    {% if original_label %}
+        <p class="label original">Original Label: {{ original_label }}</p>
+    {% endif %}
+
+    {% if predicted_label %}
+        <p class="label predicted">Predicted Label: {{ predicted_label }}</p>
+    {% endif %}
+</body>
+</html>
