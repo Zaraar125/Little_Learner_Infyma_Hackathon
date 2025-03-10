@@ -1,0 +1,14 @@
+onnxruntime
+onnxruntime-gpu
+seaborn
+tqdm
+onnx
+matplotlib
+numpy
+pandas
+torch
+torchvision
+scikit-learn
+Pillow
+scipy
+flask
